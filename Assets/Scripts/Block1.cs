@@ -6,7 +6,9 @@ using System.Threading;
 
 public class Block1 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /**
+     * create blocks using thread
+     */
 
     public float speed = 0.3f;
     public GameObject tailPrefab;
