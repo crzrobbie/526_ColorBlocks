@@ -9,19 +9,21 @@ public class Block : MonoBehaviour
     // Start is called before the first frame update
 
     public float speed = 0.3f;
-    Vector2 dir = Vector2.right;
-    List<Transform> tail = new List<Transform>();
-
-    List<Transform> domain = new List<Transform>();
-
     public GameObject tailPrefab;
 
-    public Boolean inDomain = false;
+    Vector2 dir = Vector2.right;
 
-    public float minX;
-    public float minY;
-    public float maxX;
-    public float maxY;
+    List<Transform> tail = new List<Transform>();
+    List<Transform> domain = new List<Transform>();
+
+    bool inDomain = false;
+
+    float minX;
+    float minY;
+    float maxX;
+    float maxY;
+
+    System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
     void Start()
     {
@@ -41,15 +43,19 @@ public class Block : MonoBehaviour
         transform.Translate(dir);
         Vector2 vector = transform.position;
         updateField(vector);
-        Boolean isContain = isContains(domain, vector);
+        bool isContain = isContains(domain, vector);
         if (!inDomain && isContain)
         {
             //fill the content
             //Debug.Log("To fill the content");
             //Thread thread = new Thread(fill);
             //thread.Start();
+            stopwatch.Start();
             fill();
             inDomain = true;
+            stopwatch.Stop();
+            TimeSpan timeSpan = stopwatch.Elapsed;
+            Debug.Log("total time:" + timeSpan.TotalMilliseconds);
         }
         if (!isContain)
         {
@@ -143,13 +149,13 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && dir != Vector2.left)
             dir = Vector2.right;
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) && dir != Vector2.right)
             dir = Vector2.left;
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow) && dir != Vector2.down)
             dir = Vector2.up;
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow) && dir != Vector2.up)
             dir = Vector2.down;
         
     }
