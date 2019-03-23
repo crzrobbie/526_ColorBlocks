@@ -178,6 +178,7 @@
     <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\testGameManager.cs" />
     <Compile Include="Assets\TestPlayer.cs" />
+    <Compile Include="Assets\TestPlayer1.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\Photon\PhotonUnityNetworking\Demos\DemoSlotRacer\Kenney Assets\Copyrights.txt" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
