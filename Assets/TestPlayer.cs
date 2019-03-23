@@ -11,6 +11,8 @@ public class TestPlayer : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject body;
 
     Vector2 dir = Vector2.right;
+    int id = 0;
+
 
     List<Transform> tail = new List<Transform>();
     List<Transform> domain = new List<Transform>();
@@ -28,6 +30,15 @@ public class TestPlayer : MonoBehaviourPunCallbacks, IPunObservable
     {
         if(photonView.IsMine)
         {
+            id = transform.name.ToCharArray()[0] - '0';
+            if (id==2 || id==4)
+            {
+                dir = Vector2.left;
+                float x = transform.position.x;
+                float y = transform.position.y-2;
+                transform.position = new Vector3(x, y-2, 0);
+            }
+
             minX = transform.position.x;
             maxX = transform.position.x;
             minY = transform.position.y;
@@ -187,7 +198,7 @@ public class TestPlayer : MonoBehaviourPunCallbacks, IPunObservable
                 Vector2 v = new Vector2(vector.x - i, vector.y + 1 - j);
                 updateField(v);
                 GameObject d = PhotonNetwork.Instantiate(body.name, v, Quaternion.identity, 0);
-                d.name = "domain";
+                d.name = id+"_domain";
                 domain.Insert(0, d.transform);
                 //Debug.Log(v);
             }

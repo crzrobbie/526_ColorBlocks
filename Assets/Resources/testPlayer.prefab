@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ade72148fa1f744d8e029e396b9b868, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   speed: 1
   photonView: {fileID: 560}
   body: {fileID: 99, guid: 17e278cfdc4bead4980710f285c446a3, type: 3}
+  dir: {x: 1, y: 0}
 --- !u!61 &501
 BoxCollider2D:
   m_ObjectHideFlags: 0
