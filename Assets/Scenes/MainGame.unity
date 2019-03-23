@@ -125,21 +125,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247369337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: 11500000, guid: 97d6b76af4b6d834e9943347957152ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 247369340}
-  viewIdField: 1
-  InstantiationId: 1
-  isRuntimeInstantiated: 0
+  speed: 0.3
+  tailPrefab: {fileID: 1510016987755060934, guid: 82c7c0e58b0c70a48ab416398bb8d275,
+    type: 3}
 --- !u!114 &247369339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,14 +140,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247369337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dada181c11bb3df48bb673d3f6b57993, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b88cb323a29a0a4380011fd7ac3cdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
-  photonView: {fileID: 247369338}
-  body: {fileID: 0}
+  tailPrefab: {fileID: 1510016987755060934, guid: 82c7c0e58b0c70a48ab416398bb8d275,
+    type: 3}
 --- !u!114 &247369340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,12 +157,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 247369337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 11500000, guid: a56f23c1fab10424e8f367fff8de4bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  speed: 0.3
+  tailPrefab: {fileID: 1510016987755060934, guid: 82c7c0e58b0c70a48ab416398bb8d275,
+    type: 3}
 --- !u!4 &247369342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7055583406008086666, guid: 82c7c0e58b0c70a48ab416398bb8d275,
